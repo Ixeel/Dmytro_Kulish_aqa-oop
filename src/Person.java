@@ -1,34 +1,26 @@
-public class Person {
-    private String Name;
-    private int age;
-    public String job;
+public abstract class Person implements Displayable {
+    protected String Name;
+    protected int age;
+    protected PersonRole job;
 
-    public Person(String Name, int age, String job) {
+    public Person(String Name, int age, PersonRole job) {
         this.Name = Name;
         this.age = age;
         this.job = job;
-
-        System.out.println("Ім'я: "+Name+", Вік: "+age+", Професія: "+job);
-    }
-    public String getName() {
-        return Name;
-    }
-    public int getAge() {
-        return age;
-    }
-    public String getJob() {
-        return job;
     }
 
-    public void setName(String Name){
-        this.Name = Name;
-    }
-    public void setAge(int age){
-        this.age = age;
-    }
-    public void setJob(String job){
-        this.job = job;
+    public abstract String getName();
 
-        System.out.println("\nІм'я: "+Name+", Вік: "+age+", Професія: "+job);
-    }
+    public abstract int getAge();
+
+    public abstract PersonRole getJob();
+
+    public abstract void setName(String Name);
+
+    public abstract void setAge(int age);
+
+    public abstract void setJob(PersonRole job);
+
+    @Override
+    public abstract void displayInformation();
 }
