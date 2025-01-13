@@ -5,11 +5,12 @@ public abstract class Person implements Displayable {
 
     public Person(String Name, int age, PersonRole job){
         try {
-            AgeValidator.validate(age);
+            Validator.validateAge(age);
+            Validator.validateName(Name);
             this.Name = Name;
             this.age = age;
             this.job = job;
-        } catch (InvalidAgeException e) {
+        } catch (InvalidAgeException | InvalidNameException e) {
             System.out.println("Виняток: " + e);
         }
     }

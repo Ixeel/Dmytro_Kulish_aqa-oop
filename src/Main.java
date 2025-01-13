@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Man man1 = new Man("John", 15, PersonRole.ENGINEER);
+        Man man1 = new Man("", 15, PersonRole.ENGINEER);
         man1.displayInformation();
         Woman woman1 = new Woman("Mary", 25, PersonRole.TEACHER);
         woman1.displayInformation();
