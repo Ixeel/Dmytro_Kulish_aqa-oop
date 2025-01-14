@@ -3,10 +3,16 @@ public abstract class Person implements Displayable {
     protected int age;
     protected PersonRole job;
 
-    public Person(String Name, int age, PersonRole job) {
-        this.Name = Name;
-        this.age = age;
-        this.job = job;
+    public Person(String Name, int age, PersonRole job){
+        try {
+            Validator.validateAge(age);
+            Validator.validateName(Name);
+            this.Name = Name;
+            this.age = age;
+            this.job = job;
+        } catch (InvalidAgeException | InvalidNameException e) {
+            System.out.println("Виняток: " + e);
+        }
     }
 
     public abstract String getName();
